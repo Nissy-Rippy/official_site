@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 mx-auto text-center">
+      <h1><i class="fas fa-gamepad"></i><strong>Welcome to Site</strong><i class="fas fa-gamepad"></i></h1>
+       <h3> <strong>Game making new comunication</strong> </h3>
+         <h1>そこのあなたも、始めてみませんか<strog>!!?</strog></h1>
+    　
+         <div id="box">
+           <div id="images">
+             <div class="image1"></div>
+             <div class="image2"></div>
+             <div class="image3"></div>
+             <div class="image4"></div>
+           </div>
+         </div>
+         
+        <div class="btn-wrapper col-5 mx-auto">
+        <% if user_signed_in? %>
+        <div class="row">
+        <%= link_to "Log in",user_path(current_user.id),class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+        </div>
+        <div class="row">
+        <%= link_to "Sign UP",user_path(current_user.id),class: "btn btn-success btn-sm btn-block sign_up" %>
+        </div>
+        <% else %>
+        <div class="row">
+        <%= link_to "Log in",new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+        </div>
+        <div class="row">
+        <%= link_to "Sign UP",new_user_registration_path,class: "btn btn-success btn-sm btn-block sign_up" %>
+        </div> 
+        <% end %>
+        </div>
+         
+         
+         <h1 class="jquery">Hello jQuery!</h1>
+         
+         
+    </div>
+  </div>
+</div>
