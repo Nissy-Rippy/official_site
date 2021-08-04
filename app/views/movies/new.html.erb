@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row mx-auto">
+    <div class="col-sm-6 mx-auto">
+      
+  <h1><span class="badge badge-secondary">新規動画アップロード！！</span></h1>
+  <%= form_with model: @movie, local: true do |form| %>
+  <p class="btn btn-secondary">タイトル</p></br><%= form.text_field :title ,class: "form-control" %> <br>
+  <p class="btn btn-secondary">！説明文！</p></br><%= form.text_area :introduction,class: "form-control" %> <br>
+  <pclass="btn btn-secondary">動画</p><%= form.file_field :movie,class: "form-control" %> <br>
+  <%= form.submit "Create Movie",class:"btn btn-secondary"%>
+  <% end %>
+
+
+  </div>
+ </div>
+</div>

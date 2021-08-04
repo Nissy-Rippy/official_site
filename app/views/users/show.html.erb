@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 mx-auto text-center">
+      <h1>My Page</h1>
+      　
+            <div class="row">
+            <div class="col-4">
+            <%= attachment_image_tag @user,:profile_image,:fill,200,200,fallback: "nissy.jpg",size: "200x200",class: "text-center" %>
+            </div>
+            <div class="col-6 text-left">
+            <div class="name-box">   User Name： <%= @user.name %></div>
+            <div class="name-box">Introduction：</div>
+            <div class="border border-primary">
+            <%= @user.introduction %>
+            </div>
+            <div class="col-7 btn btn-block text-left">
+            <%= link_to edit_user_path(@user) do %>
+            <button type="button" class="btn btn-secondary btn-block fas fa-user-cog"></button>
+            <% end %>
+          　</div>    
+　　　　　　</div>
+
+          
+     <% @movies.each do |moviee| %>
+     <div class="row pt-10 ml-5">
+     <% if moviee.movie.attached? %>
+     <div class="col-5">
+     <video width="200" height="150" src="<%= rails_blob_path(moviee.movie) %>" type="/mp4" controls ></video>
+     </div>
+     <div calss="col-3">
+     <p class="pt-2 pl-5"><strong>タイトル：</strong>「<%= moviee.title %>」</p></br>
+     <p><strong>説明文：</strong>「<%= moviee.introduction %>」</p>
+     </div>
+     <div class="col-3">
+       <%= link_to "削除",movie_path(moviee),method: :delete,"data-confirm" =>"本当に消しますか？",class: "btn btn-dander" %>
+     </div>
+     <% end %>
+     <% end %>
+     </div>
+
+          
+</div>
+    </div>
+      </div>

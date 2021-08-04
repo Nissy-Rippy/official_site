@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <div class="row mx-auto">
+    <div class="col-sm-10 mx-auto">
+      <h1>動画詳細ページ</h1>
+      
+        <div class="row h-25">
+        <% if @movie.movie.attached? %>
+        <div class="col-3">
+        <video width="200" height="150" src="<%= rails_blob_path(@movie.movie) %>" type="/mp4" controls ></video>
+        </div>
+        <div calss="col-6">
+        <p class="pt-3"><strong>投稿者：</strong>「<%= @movie.user.name %>」</br> <strong>タイトル：</strong>「<%= @movie.title %>」</br><strong>説明文</strong>「<%= @movie.introduction %>」</p>
+        </div>
+        <% end %>
+        </div>
+        </div>
+　　    <div class="row">
+　　    <%= link_to "投稿一覧",movies_path,class: "btn btn-success" %><%= link_to "新規投稿",new_movie_path,class: "btn btn-info" %><%= link_to "   削除  ",movie_path(@movie),method: :delete,class:"btn btn-danger","data-confirm" =>"本当に消しますか?" %>
+　　    </div>
+　　    <div><video width="200" height="150" src="<%= rails_blob_path(moviee.movie) %>" type="/mp4" controls ></video></div>
+    </div>
+  </div>
+</div>

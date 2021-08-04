@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+
+      <% @movies.each do |moviee|%>
+     <div class="row mx-auto mt-10">
+     <% if moviee.movie.attached? %>
+
+     <div class="col-4">
+     <video width="200" height="150" src="<%= rails_blob_path(moviee.movie) %>" type="/mp4" controls ></video>
+     </div>
+
+     <div calss="col-">
+     <p class="pt-2"><strong>タイトル：</strong>「<%= link_to moviee.title,user_path(moviee.id) %>」</p>
+     <p><strong>説明文：</strong>「<%= moviee.introduction %>」</p>
+     </div>
+
+     <div class="col-2">
+       <%= link_to "削除",movie_path(moviee),method: :delete,"data-confirm" =>"本当に消しますか？",class: "btn btn-danger" %>
+     </div>
+
+     </div>
+     <% end %>
+     <% end %>
+    </div>
+  </div>
+    </div>
+      </div>

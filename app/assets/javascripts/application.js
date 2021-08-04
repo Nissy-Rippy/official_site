@@ -12,19 +12,28 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-var title = "javascriptが使えました";
-alert(title);
+
+var jQuery = require('jquery')
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+window.jQuery = $;
+window.$ = $
+//var title = "javascriptが使えました";
+//alert(title);
 
 /*global$*/(document).ready(function () {
 /*global$*/('.jquery').on('click', function(){
 /*global$*/(this).css('color','red');
   });
+});
+
+$(function() {
+  console.log("OK");
 });
 
 $(document).ready(function () {
