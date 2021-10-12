@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
+      @user = User.find_by(params[:id])
       @movies = @user.movies
   end
 
@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     @user.update(users_params)
     redirect_to(user_path(@user))
   end
-  
+
   private
-  
+
   def users_params
       params.require(:user).permit(:profile_image,:introduction,:name)
   end
